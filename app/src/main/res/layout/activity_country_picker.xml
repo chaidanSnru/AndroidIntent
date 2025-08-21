@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountryPickerActivity">
+
+    <!-- ScrollView ทำให้เราเลื่อนดู RadioButton ทั้งหมดได้ -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/confirmButton">
+
+        <!-- RadioGroup เป็นกลุ่มของ RadioButton ทำให้เลือกได้อันเดียว -->
+        <RadioGroup
+            android:id="@+id/countryRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp" />
+
+    </ScrollView>
+
+    <!-- ปุ่มยืนยัน จะอยู่ด้านล่างสุดของจอเสมอ -->
+    <Button
+        android:id="@+id/confirmButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:text="ยืนยัน" />
+
+</RelativeLayout>
