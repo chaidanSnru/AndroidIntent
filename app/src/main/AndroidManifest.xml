@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <!-- ส่วนนี้เป็นการประกาศว่าแอปของเราสามารถเรียกใช้งานกล้องได้ -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <!-- ▼▼▼ เพิ่มส่วนนี้เข้าไป ▼▼▼ -->
+    <queries>
+        <!-- ส่วนนี้เป็นการประกาศว่าแอปของเรามีความตั้งใจที่จะเรียกใช้ Intent ประเภท VIEW -->
+        <!-- ที่มีข้อมูลเป็นลิงก์ https เพื่อให้ระบบสามารถมองเห็นแอปเบราว์เซอร์ได้ -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <!-- ส่วนนี้เป็นการประกาศว่าแอปของเรามีความตั้งใจที่จะเรียกใช้ Intent ประเภท VIEW -->
+        <!-- ที่มีข้อมูลเป็นตำแหน่ง geo เพื่อให้ระบบสามารถมองเห็นแอปแผนที่ได้ -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        <!-- ส่วนนี้เป็นการประกาศว่าแอปของเรามีความตั้งใจที่จะเรียกใช้ Intent ประเภท DIAL -->
+        <!-- ที่มีข้อมูลเป็นเบอร์โทร tel: เพื่อให้ระบบสามารถมองเห็นแอปโทรศัพท์ได้ -->
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+            <data android:scheme="tel" />
+        </intent>
+    </queries>
+    <!-- ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲ -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
